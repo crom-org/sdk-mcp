@@ -1,0 +1,35 @@
+name: exemplo-projeto
+description: Projeto de exemplo para crom-mcp-sdk
+
+rules:
+  - id: regra-contexto
+    type: instruction
+    title: Contexto do projeto
+    content: Antes de qualquer ação, confirme o ambiente e não altere arquivos de config sem aprovação.
+    priority: 10
+    enabled: true
+
+mcps:
+  - id: mcp-filesystem
+    name: Filesystem
+    type: stdio
+    command: npx
+    args: ["@modelcontextprotocol/server-filesystem", "./"]
+    enabled: true
+    autoConnect: false
+
+harnesses:
+  - id: harness-hello
+    name: Hello World
+    type: command
+    command: echo
+    args: ["Olá do crom-mcp-sdk!"]
+    timeoutMs: 10000
+    enabled: true
+
+agents:
+  - id: agent-exemplo
+    name: Agent Exemplo
+    type: local
+    systemPrompt: Você é um assistente de exemplo.
+    enabled: true

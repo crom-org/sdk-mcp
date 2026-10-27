@@ -1,0 +1,27 @@
+{
+  "name": "sdk-mcp",
+  "version": "1.0.0",
+  "description": "MCP SDK para conectar e controlar MCPs, scripts, projetos, agentes e harnesses com configuração por pasta de projeto",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "sdk-mcp": "dist/bin.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/cli.js",
+    "dev": "tsx watch src/cli.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "zod": "^3.22.0",
+    "chokidar": "^3.5.0",
+    "js-yaml": "^4.1.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.0",
+    "tsx": "^4.6.0",
+    "@types/js-yaml": "^4.0.0",
+    "@types/node": "^20.0.0"
+  }
+}
